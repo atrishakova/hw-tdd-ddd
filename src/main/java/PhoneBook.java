@@ -25,5 +25,7 @@ public class PhoneBook {
         return nameToNumber.get(name);
     }
 
-    public void printAllNames() {}
+    public void printAllNames() {
+        nameToNumber.keySet().forEach(System.out::println);
+    }
 }
