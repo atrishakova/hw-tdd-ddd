@@ -43,4 +43,17 @@ public class PhoneBookTest {
         String name = phoneBook.findByNumber("000000");
         assertNull(name);
     }
+
+    @Test
+    void findByNameShouldReturnPhoneNumberWhenNameExists() {
+        phoneBook.add("Petya", "123456");
+        String phone = phoneBook.findByName("Petya");
+        assertEquals("123456", phone);
+    }
+
+    @Test
+    void findByNameShouldReturnNullWhenNameNotFound() {
+        String name = phoneBook.findByName("Test");
+        assertNull(name);
+    }
 }
