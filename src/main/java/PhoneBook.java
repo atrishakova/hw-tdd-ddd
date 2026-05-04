@@ -1,5 +1,18 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class PhoneBook {
+    private final Map<String, String> nameToNumber = new HashMap<>();
+    private final Map<String, String> numberToName = new HashMap<>();
+
     public int add (String name, String phoneNumber) {
-        return 0;
+        if (nameToNumber.containsKey(name)) {
+            return nameToNumber.size();
+        }
+
+        nameToNumber.put(name, phoneNumber);
+        numberToName.put(phoneNumber, name);
+
+        return nameToNumber.size();
     }
 }
